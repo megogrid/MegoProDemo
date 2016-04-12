@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/inapp_app_row_round"
+    android:padding="15dp" >
+
+    <TextView
+        android:id="@+id/itemPurchase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Glucometer"
+        android:textSize="20sp"
+        android:textColor="@color/grey_light1"/>
+
+    <TextView
+        android:id="@+id/infoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/itemPurchase"
+        android:layout_marginTop="5dp"
+        android:text="Press confirm to purchase or cancel to cancel the purchase"
+        android:textColor="@color/grey_light2"/>
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/infoText"
+        android:background="@android:color/white"
+        android:text="CONFIRM"
+        android:textColor="@color/sky_blue"/>
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/infoText"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/confirm"
+        android:background="@android:color/white"
+        android:text="CANCEL"
+        android:textColor="@color/black"/>
+
+</RelativeLayout><!-- From: file:/home/vijay/AndroidStudioProjects/MegoProInAppDemo/InAppDeeplinkMod/res/layout/purchase_dialog.xml --><!-- From: file:/home/vijay/AndroidStudioProjects/MegoProInAppDemo/InAppDeeplinkMod/build/intermediates/bundles/debug/res/layout/purchase_dialog.xml -->

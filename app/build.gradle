@@ -1,0 +1,130 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+
+apply plugin: 'android'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+
+
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+//    buildTypes {
+//        debug {
+//            debuggable true
+//        }
+//        customDebuggableBuildType {
+//            debuggable true
+//        }
+//        release {
+//            debuggable false
+//        }
+//    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+    defaultConfig {
+        applicationId 'com.megogrid.megopro'
+        minSdkVersion 11
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled = true
+
+    }
+    signingConfigs {
+        release {
+            storeFile file('/home/vijay/Desktop/my_release_keystore.jks')
+            storePassword "migital"
+            keyAlias "alias_name"
+            keyPassword "megogrid"
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+//    signingConfigs {
+//
+//
+//        release {
+//            storeFile file('/home/vijay/Desktop/my_release_keystore.jks')
+//            storePassword "migital"
+//            keyAlias "alias_name"
+//            keyPassword "megogrid"
+//        }
+//    }
+    buildTypes {
+        release {
+
+            //signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+    productFlavors {
+    }
+}
+repositories {
+    maven{
+        url "http://dl.bintray.com/megogrid/android"
+    }
+}
+dependencies {
+    compile project(':libsection')
+    compile 'com.android.support:multidex:1.0.1'
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.5@aar') {
+        transitive = true;
+    }
+
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
+    compile 'com.github.bumptech.glide:glide:3.6.0'
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:recyclerview-v7:22.2.0'
+    compile project(':InAppDeeplinkMod')
+    compile 'com.megogrid:megopurchase:1.0.0'
+
+}

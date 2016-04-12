@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/sky_blue"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/backPress"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/errow"
+            android:contentDescription="@string/con_description"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:paddingLeft="15dp"
+            android:gravity="center|left"
+            android:textColor="@color/inapp_white"
+            android:text="@string/header"
+            android:textSize="@dimen/txtSize"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey"
+        android:orientation="vertical">
+        <ListView
+            android:id="@+id/mainItemList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:divider="@null" />
+    </LinearLayout>
+</LinearLayout>
+<!-- From: file:/home/vijay/AndroidStudioProjects/MegoProInAppDemo/InAppDeeplinkMod/res/layout/itemlist.xml --><!-- From: file:/home/vijay/AndroidStudioProjects/MegoProInAppDemo/InAppDeeplinkMod/build/intermediates/bundles/debug/res/layout/itemlist.xml -->

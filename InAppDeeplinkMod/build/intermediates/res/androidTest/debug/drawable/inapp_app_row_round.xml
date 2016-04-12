@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <corners android:radius="2dp" />
+
+    <solid android:color="@color/inapp_white" />
+
+</shape><!-- From: file:/home/vijay/AndroidStudioProjects/MegoProInAppDemo/InAppDeeplinkMod/res/drawable/inapp_app_row_round.xml --><!-- From: file:/home/vijay/AndroidStudioProjects/MegoProInAppDemo/InAppDeeplinkMod/build/intermediates/bundles/debug/res/drawable/inapp_app_row_round.xml -->
